@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		A4561944223BD3D200E3F0AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561943223BD3D200E3F0AB /* AppDelegate.swift */; };
-		A4561946223BD3D200E3F0AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561945223BD3D200E3F0AB /* ViewController.swift */; };
 		A4561949223BD3D200E3F0AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4561947223BD3D200E3F0AB /* Main.storyboard */; };
 		A456194C223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A456194A223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld */; };
 		A456194E223BD3D300E3F0AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A456194D223BD3D300E3F0AB /* Assets.xcassets */; };
 		A4561951223BD3D300E3F0AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A456194F223BD3D300E3F0AB /* LaunchScreen.storyboard */; };
+		A456195E223BD4E000E3F0AB /* Fruits+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456195C223BD4E000E3F0AB /* Fruits+CoreDataClass.swift */; };
+		A456195F223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456195D223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift */; };
+		A4561961223BD7DF00E3F0AB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561960223BD7DF00E3F0AB /* ListViewController.swift */; };
+		A4561964223BDA5E00E3F0AB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561962223BDA5E00E3F0AB /* CustomCell.swift */; };
+		A4561965223BDA5E00E3F0AB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4561963223BDA5E00E3F0AB /* CustomCell.xib */; };
+		A4561967223BDE0300E3F0AB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561966223BDE0300E3F0AB /* DetailViewController.swift */; };
+		A456196A223BDF3400E3F0AB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561969223BDF3400E3F0AB /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4561940223BD3D200E3F0AB /* FruitAppTake2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitAppTake2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4561943223BD3D200E3F0AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4561945223BD3D200E3F0AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4561948223BD3D200E3F0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A456194B223BD3D200E3F0AB /* FruitAppTake2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FruitAppTake2.xcdatamodel; sourceTree = "<group>"; };
 		A456194D223BD3D300E3F0AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4561950223BD3D300E3F0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4561952223BD3D300E3F0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A456195C223BD4E000E3F0AB /* Fruits+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fruits+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A456195D223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fruits+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A4561960223BD7DF00E3F0AB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A4561962223BDA5E00E3F0AB /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A4561963223BDA5E00E3F0AB /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		A4561966223BDE0300E3F0AB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A4561969223BDF3400E3F0AB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,61 @@
 		A4561942223BD3D200E3F0AB /* FruitAppTake2 */ = {
 			isa = PBXGroup;
 			children = (
-				A4561943223BD3D200E3F0AB /* AppDelegate.swift */,
-				A4561945223BD3D200E3F0AB /* ViewController.swift */,
-				A4561947223BD3D200E3F0AB /* Main.storyboard */,
+				A4561968223BDF2200E3F0AB /* Managers */,
+				A456195B223BD45200E3F0AB /* Storyboards */,
+				A456195A223BD44B00E3F0AB /* Models */,
+				A4561959223BD43F00E3F0AB /* Views */,
+				A4561958223BD43600E3F0AB /* Controllers */,
 				A456194D223BD3D300E3F0AB /* Assets.xcassets */,
-				A456194F223BD3D300E3F0AB /* LaunchScreen.storyboard */,
 				A4561952223BD3D300E3F0AB /* Info.plist */,
-				A456194A223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld */,
 			);
 			path = FruitAppTake2;
+			sourceTree = "<group>";
+		};
+		A4561958223BD43600E3F0AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4561943223BD3D200E3F0AB /* AppDelegate.swift */,
+				A4561960223BD7DF00E3F0AB /* ListViewController.swift */,
+				A4561966223BDE0300E3F0AB /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A4561959223BD43F00E3F0AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4561962223BDA5E00E3F0AB /* CustomCell.swift */,
+				A4561963223BDA5E00E3F0AB /* CustomCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A456195A223BD44B00E3F0AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A456195C223BD4E000E3F0AB /* Fruits+CoreDataClass.swift */,
+				A456195D223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift */,
+				A456194A223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A456195B223BD45200E3F0AB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A4561947223BD3D200E3F0AB /* Main.storyboard */,
+				A456194F223BD3D300E3F0AB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A4561968223BDF2200E3F0AB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A4561969223BDF3400E3F0AB /* APIManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +185,7 @@
 			files = (
 				A4561951223BD3D300E3F0AB /* LaunchScreen.storyboard in Resources */,
 				A456194E223BD3D300E3F0AB /* Assets.xcassets in Resources */,
+				A4561965223BDA5E00E3F0AB /* CustomCell.xib in Resources */,
 				A4561949223BD3D200E3F0AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4561946223BD3D200E3F0AB /* ViewController.swift in Sources */,
+				A456196A223BDF3400E3F0AB /* APIManager.swift in Sources */,
 				A4561944223BD3D200E3F0AB /* AppDelegate.swift in Sources */,
+				A456195F223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift in Sources */,
+				A456195E223BD4E000E3F0AB /* Fruits+CoreDataClass.swift in Sources */,
+				A4561961223BD7DF00E3F0AB /* ListViewController.swift in Sources */,
+				A4561964223BDA5E00E3F0AB /* CustomCell.swift in Sources */,
 				A456194C223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld in Sources */,
+				A4561967223BDE0300E3F0AB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

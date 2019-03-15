@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainFruitPicture" translatesAutoresizingMaskIntoConstraints="NO" id="4fT-ds-gCf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-bs-psX">
+                                <rect key="frame" x="0.0" y="203" width="375" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="R6d-wC-iwD">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R6d-wC-iwD" id="DeW-zL-2R2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ZYh-vT-N2U" kind="show" identifier="goToDetails" id="YOf-7O-nms"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4fT-ds-gCf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="2Do-hx-LU4"/>
+                            <constraint firstItem="gtm-bs-psX" firstAttribute="top" secondItem="4fT-ds-gCf" secondAttribute="bottom" id="6vM-VH-Jp9"/>
+                            <constraint firstItem="4fT-ds-gCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABs-55-ksV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtm-bs-psX" secondAttribute="bottom" id="Aet-SC-MNK"/>
+                            <constraint firstItem="gtm-bs-psX" firstAttribute="top" secondItem="4fT-ds-gCf" secondAttribute="bottom" id="NbD-wj-6ba"/>
+                            <constraint firstItem="4fT-ds-gCf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rfR-Hn-Pz1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4fT-ds-gCf" secondAttribute="trailing" id="ufw-Hu-3DI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtm-bs-psX" secondAttribute="trailing" id="y8D-E2-fUM"/>
+                            <constraint firstItem="gtm-bs-psX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ynd-5M-XyZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="81"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="x7G-ZU-KWS">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="ZYh-vT-N2U" customClass="DetailViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e4e-88-yfl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-OR-8uT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="852-Q5-rFt"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Fruit Name" id="4y5-Uq-7gU">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="NlM-Ap-jcQ">
+                                            <connections>
+                                                <action selector="backButtonTapped:" destination="ZYh-vT-N2U" id="YEU-l9-BzF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-PK-zFz">
+                                <rect key="frame" x="0.0" y="534.33333333333337" width="375" height="243.66666666666663"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6z-8T-oGe">
+                                <rect key="frame" x="20" y="147" width="335" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GGd-eJ-0IL" firstAttribute="trailing" secondItem="atZ-PK-zFz" secondAttribute="trailing" id="0RJ-aX-CB2"/>
+                            <constraint firstItem="Xsh-OR-8uT" firstAttribute="top" secondItem="GGd-eJ-0IL" secondAttribute="top" id="3z4-hh-7VL"/>
+                            <constraint firstItem="G6z-8T-oGe" firstAttribute="leading" secondItem="GGd-eJ-0IL" secondAttribute="leading" constant="20" id="FbV-uI-bCx"/>
+                            <constraint firstItem="GGd-eJ-0IL" firstAttribute="bottom" secondItem="atZ-PK-zFz" secondAttribute="bottom" id="KSz-Qr-w21"/>
+                            <constraint firstItem="G6z-8T-oGe" firstAttribute="top" secondItem="Xsh-OR-8uT" secondAttribute="bottom" constant="53" id="Q2M-mK-REZ"/>
+                            <constraint firstItem="GGd-eJ-0IL" firstAttribute="trailing" secondItem="G6z-8T-oGe" secondAttribute="trailing" constant="20" id="Sdm-IS-UUH"/>
+                            <constraint firstItem="atZ-PK-zFz" firstAttribute="leading" secondItem="GGd-eJ-0IL" secondAttribute="leading" id="ZKH-JI-r9v"/>
+                            <constraint firstItem="Xsh-OR-8uT" firstAttribute="leading" secondItem="GGd-eJ-0IL" secondAttribute="leading" id="lnR-Ya-lUt"/>
+                            <constraint firstItem="G6z-8T-oGe" firstAttribute="centerX" secondItem="e4e-88-yfl" secondAttribute="centerX" id="mUN-xA-fUF"/>
+                            <constraint firstItem="Xsh-OR-8uT" firstAttribute="trailing" secondItem="GGd-eJ-0IL" secondAttribute="trailing" id="rPA-tm-XDK"/>
+                            <constraint firstItem="atZ-PK-zFz" firstAttribute="height" secondItem="e4e-88-yfl" secondAttribute="height" multiplier="0.3" id="yjy-oH-boN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GGd-eJ-0IL"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsLabel" destination="G6z-8T-oGe" id="HHT-3v-wOX"/>
+                        <outlet property="imageFruit" destination="atZ-PK-zFz" id="fTh-17-HNE"/>
+                        <outlet property="titleFruitName" destination="4y5-Uq-7gU" id="8JO-Yn-5EX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sE-Ws-FEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mainFruitPicture" width="2300" height="1225"/>
+    </resources>
+</document>
