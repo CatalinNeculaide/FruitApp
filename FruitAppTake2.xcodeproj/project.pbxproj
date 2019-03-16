@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BA8A7B353B62AB9113A9447 /* Pods_FruitAppTake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEB9D4E19EA89AA837F5CD /* Pods_FruitAppTake2.framework */; };
 		A4561944223BD3D200E3F0AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561943223BD3D200E3F0AB /* AppDelegate.swift */; };
 		A4561949223BD3D200E3F0AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4561947223BD3D200E3F0AB /* Main.storyboard */; };
 		A456194C223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A456194A223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld */; };
@@ -19,9 +20,14 @@
 		A4561965223BDA5E00E3F0AB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4561963223BDA5E00E3F0AB /* CustomCell.xib */; };
 		A4561967223BDE0300E3F0AB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561966223BDE0300E3F0AB /* DetailViewController.swift */; };
 		A456196A223BDF3400E3F0AB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4561969223BDF3400E3F0AB /* APIManager.swift */; };
+		A456196C223C124D00E3F0AB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456196B223C124D00E3F0AB /* CoreDataManager.swift */; };
+		A4D6F1F0223CF47F001B45BA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6F1EF223CF47F001B45BA /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72CEB9D4E19EA89AA837F5CD /* Pods_FruitAppTake2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruitAppTake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79562B1E6F1DC50400EF0B2E /* Pods-FruitAppTake2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitAppTake2.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruitAppTake2/Pods-FruitAppTake2.release.xcconfig"; sourceTree = "<group>"; };
+		7FED16E1CB743C7DBEC72202 /* Pods-FruitAppTake2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitAppTake2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruitAppTake2/Pods-FruitAppTake2.debug.xcconfig"; sourceTree = "<group>"; };
 		A4561940223BD3D200E3F0AB /* FruitAppTake2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitAppTake2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4561943223BD3D200E3F0AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4561948223BD3D200E3F0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		A4561963223BDA5E00E3F0AB /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A4561966223BDE0300E3F0AB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A4561969223BDF3400E3F0AB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A456196B223C124D00E3F0AB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A4D6F1EF223CF47F001B45BA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA8A7B353B62AB9113A9447 /* Pods_FruitAppTake2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5222987552A0C9A1E112628E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72CEB9D4E19EA89AA837F5CD /* Pods_FruitAppTake2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A4561937223BD3D200E3F0AB = {
 			isa = PBXGroup;
 			children = (
 				A4561942223BD3D200E3F0AB /* FruitAppTake2 */,
 				A4561941223BD3D200E3F0AB /* Products */,
+				B2C51C5F83A686E286CAD821 /* Pods */,
+				5222987552A0C9A1E112628E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +87,7 @@
 		A4561942223BD3D200E3F0AB /* FruitAppTake2 */ = {
 			isa = PBXGroup;
 			children = (
+				A4D6F1EE223CF465001B45BA /* Extensions */,
 				A4561968223BDF2200E3F0AB /* Managers */,
 				A456195B223BD45200E3F0AB /* Storyboards */,
 				A456195A223BD44B00E3F0AB /* Models */,
@@ -121,8 +141,26 @@
 			isa = PBXGroup;
 			children = (
 				A4561969223BDF3400E3F0AB /* APIManager.swift */,
+				A456196B223C124D00E3F0AB /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		A4D6F1EE223CF465001B45BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6F1EF223CF47F001B45BA /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2C51C5F83A686E286CAD821 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FED16E1CB743C7DBEC72202 /* Pods-FruitAppTake2.debug.xcconfig */,
+				79562B1E6F1DC50400EF0B2E /* Pods-FruitAppTake2.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4561955223BD3D300E3F0AB /* Build configuration list for PBXNativeTarget "FruitAppTake2" */;
 			buildPhases = (
+				283E8F471864E9A6E76A6FAE /* [CP] Check Pods Manifest.lock */,
 				A456193C223BD3D200E3F0AB /* Sources */,
 				A456193D223BD3D200E3F0AB /* Frameworks */,
 				A456193E223BD3D200E3F0AB /* Resources */,
+				68E82A09CD58FC72387F46AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +232,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		283E8F471864E9A6E76A6FAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FruitAppTake2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E82A09CD58FC72387F46AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FruitAppTake2/Pods-FruitAppTake2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruitAppTake2/Pods-FruitAppTake2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A456193C223BD3D200E3F0AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -200,9 +287,11 @@
 				A456196A223BDF3400E3F0AB /* APIManager.swift in Sources */,
 				A4561944223BD3D200E3F0AB /* AppDelegate.swift in Sources */,
 				A456195F223BD4E000E3F0AB /* Fruits+CoreDataProperties.swift in Sources */,
+				A4D6F1F0223CF47F001B45BA /* UIImage.swift in Sources */,
 				A456195E223BD4E000E3F0AB /* Fruits+CoreDataClass.swift in Sources */,
 				A4561961223BD7DF00E3F0AB /* ListViewController.swift in Sources */,
 				A4561964223BDA5E00E3F0AB /* CustomCell.swift in Sources */,
+				A456196C223C124D00E3F0AB /* CoreDataManager.swift in Sources */,
 				A456194C223BD3D200E3F0AB /* FruitAppTake2.xcdatamodeld in Sources */,
 				A4561967223BDE0300E3F0AB /* DetailViewController.swift in Sources */,
 			);
@@ -348,6 +437,7 @@
 		};
 		A4561956223BD3D300E3F0AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FED16E1CB743C7DBEC72202 /* Pods-FruitAppTake2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +456,7 @@
 		};
 		A4561957223BD3D300E3F0AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79562B1E6F1DC50400EF0B2E /* Pods-FruitAppTake2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

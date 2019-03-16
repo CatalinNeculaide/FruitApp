@@ -13,7 +13,7 @@
         <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="203" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="R6d-wC-iwD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="R6d-wC-iwD" customClass="CustomCell" customModule="FruitAppTake2">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R6d-wC-iwD" id="DeW-zL-2R2">
@@ -38,21 +38,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v7V-gg-wpi">
+                                <rect key="frame" x="172.66666666666666" y="396" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4VP-yt-33H"/>
+                                    <constraint firstAttribute="width" constant="30" id="nsN-BU-UMv"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4fT-ds-gCf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="2Do-hx-LU4"/>
-                            <constraint firstItem="gtm-bs-psX" firstAttribute="top" secondItem="4fT-ds-gCf" secondAttribute="bottom" id="6vM-VH-Jp9"/>
+                            <constraint firstItem="gtm-bs-psX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8XU-xQ-xhn"/>
                             <constraint firstItem="4fT-ds-gCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABs-55-ksV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtm-bs-psX" secondAttribute="bottom" id="Aet-SC-MNK"/>
+                            <constraint firstItem="v7V-gg-wpi" firstAttribute="top" secondItem="4fT-ds-gCf" secondAttribute="bottom" constant="193" id="ECD-Jt-xxX"/>
                             <constraint firstItem="gtm-bs-psX" firstAttribute="top" secondItem="4fT-ds-gCf" secondAttribute="bottom" id="NbD-wj-6ba"/>
+                            <constraint firstItem="v7V-gg-wpi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gft-wP-896"/>
                             <constraint firstItem="4fT-ds-gCf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rfR-Hn-Pz1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4fT-ds-gCf" secondAttribute="trailing" id="ufw-Hu-3DI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtm-bs-psX" secondAttribute="trailing" id="y8D-E2-fUM"/>
-                            <constraint firstItem="gtm-bs-psX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ynd-5M-XyZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="v7V-gg-wpi" id="Min-Hh-HvB"/>
+                        <outlet property="listTableView" destination="gtm-bs-psX" id="htc-Ap-3S0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +73,7 @@
         <!--Detail View Controller-->
         <scene sceneID="x7G-ZU-KWS">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="ZYh-vT-N2U" customClass="DetailViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" id="ZYh-vT-N2U" customClass="DetailViewController" customModule="FruitAppTake2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e4e-88-yfl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="50" id="852-Q5-rFt"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Fruit Name" id="4y5-Uq-7gU">
+                                    <navigationItem title="Details" id="4y5-Uq-7gU">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="NlM-Ap-jcQ">
                                             <connections>
                                                 <action selector="backButtonTapped:" destination="ZYh-vT-N2U" id="YEU-l9-BzF"/>
@@ -81,10 +93,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-PK-zFz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-PK-zFz">
                                 <rect key="frame" x="0.0" y="534.33333333333337" width="375" height="243.66666666666663"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6z-8T-oGe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6z-8T-oGe">
                                 <rect key="frame" x="20" y="147" width="335" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -110,7 +122,6 @@
                     <connections>
                         <outlet property="detailsLabel" destination="G6z-8T-oGe" id="HHT-3v-wOX"/>
                         <outlet property="imageFruit" destination="atZ-PK-zFz" id="fTh-17-HNE"/>
-                        <outlet property="titleFruitName" destination="4y5-Uq-7gU" id="8JO-Yn-5EX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sE-Ws-FEc" userLabel="First Responder" sceneMemberID="firstResponder"/>

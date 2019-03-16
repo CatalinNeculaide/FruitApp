@@ -11,9 +11,9 @@ import UIKit
 class DetailViewController: UIViewController {
     
     
-    @IBOutlet weak var titleFruitName: UINavigationItem!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var imageFruit: UIImageView!
+    
     
     var fruit: Fruits = Fruits()
     
@@ -21,12 +21,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configure()
+        
     }
     
     static func instantiate(with selectedFruit: Fruits) -> DetailViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
         controller.fruit = selectedFruit
         
         return controller
@@ -35,7 +36,8 @@ class DetailViewController: UIViewController {
     
     func configure() {
         
-        title = fruit.title
+        detailsLabel.text = fruit.title
+        getImage(url: fruit.url!)
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -43,4 +45,19 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    
+    func getImage(url: String) {
+        APIManager.shared.getPictureOfFruit(url: url) { (isSuccess, error, image) in
+            if isSuccess == true {
+                DispatchQueue.main.async {
+                    self.imageFruit.image = image
+                }
+            } else {
+                print("Error in getting image")
+            }
+            
+            
+        }
+    }
+    
 }

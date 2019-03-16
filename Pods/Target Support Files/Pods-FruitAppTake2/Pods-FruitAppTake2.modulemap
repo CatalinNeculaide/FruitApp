@@ -1,0 +1,6 @@
+framework module Pods_FruitAppTake2 {
+  umbrella header "Pods-FruitAppTake2-umbrella.h"
+
+  export *
+  module * { export * }
+}
