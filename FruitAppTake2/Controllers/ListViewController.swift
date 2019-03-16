@@ -15,6 +15,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    enum TableSection: Int{
+        case local = 0, exotic, total
+    }
+    
+    let sectionHeaderHeight: CGFloat = 25
+    
+    var data = [TableSection: [Fruits]?]()
+    
     
     var fruits: [Fruits] = []
     var images: [String:UIImage] = [:]
@@ -26,10 +34,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         listTableView.delegate = self
         listTableView.dataSource = self
         listTableView.allowsSelection = true
+        listTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         
         getAllFruit()
-        getAllImages()
+//        getAllImages()
       
     }
     
@@ -38,28 +47,83 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     // MARK: - Table view data source
 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 0
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TableSection.total.rawValue
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fruits.count
+        
+        if let tableSection = TableSection(rawValue: section), let fruitData = data[tableSection] {
+            return fruitData!.count
+        }
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    
+        if section == 0 {
+            if let fruitData = data[.local] {
+                if fruitData!.count > 0 {
+                    return sectionHeaderHeight
+                }
+            }
+        } else if section == 1 {
+            if let fruitData = data[.exotic] {
+                if fruitData!.count > 0 {
+                    return sectionHeaderHeight
+                }
+            }
+        }
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: sectionHeaderHeight))
+        view.backgroundColor = UIColor.green
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width, height: sectionHeaderHeight))
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.textColor = UIColor.black
+        
+        if let tableSection = TableSection(rawValue: section){
+            switch tableSection {
+            case .local:
+                label.text = "Local"
+            case .exotic:
+                label.text = "Exotic"
+            default:
+                label.text = "Fruits"
+            }
+        }
+        view.addSubview(label)
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
-        
-        let fruit = fruits[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         
         cell.accessoryType = .disclosureIndicator
         
-        cell.fruitTitle.text = fruit.title!
-        cell.fruitDetails.isHidden = true
-        if images[fruit.title!] != nil {
-            cell.fruitImage.image = images[fruit.title!]
+        if indexPath.section == 0 {
+            if let fruit = data[.local]??[indexPath.row] {
+                if let title = fruit.title {
+                    cell.fruitTitle.text = title
+                    cell.fruitDetails.isHidden = true
+                    cell.imageView?.isHidden = true
+                }
+            }
+        } else if indexPath.section == 1 {
+            if let fruit = data[.exotic]??[indexPath.row] {
+                if let title = fruit.title {
+                    cell.fruitTitle.text = title
+                    cell.fruitDetails.isHidden = true
+                    cell.imageView?.isHidden = true
+                }
+            }
         }
         
         return cell
@@ -67,7 +131,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let detailViewController = DetailViewController.instantiate(with: fruits[indexPath.row])
+        var option: Fruits = Fruits()
+        if indexPath.section == 0 {
+            if let fruit = data[.local]??[indexPath.row] {
+                option = fruit
+            }
+        } else if indexPath.section == 1 {
+            if let fruit = data[.exotic]??[indexPath.row] {
+               option = fruit
+            }
+        }
+        
+        let detailViewController = DetailViewController.instantiate(with: option)
         self.present(detailViewController, animated: true, completion: nil)
         
     }
@@ -89,8 +164,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 DispatchQueue.main.async { [weak self] in
                     self?.listTableView.reloadData()
                     self?.activityIndicator.stopAnimating()
+                    self?.sortData()
                 }
-                self.section = self.getSections(fruits: self.fruits)
                 
             } else {
                 print(error!)
@@ -100,29 +175,29 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 DispatchQueue.main.async { [weak self] in
                     self?.listTableView.reloadData()
                     self?.activityIndicator.stopAnimating()
+                    self?.sortData()
                 }
-                self.section = self.getSections(fruits: self.fruits)
             }
         }
         
     }
     
-    func getAllImages(){
-        
-        for fruit in fruits {
-            APIManager.shared.getPictureOfFruit(url: fruit.url!) { (isSuccess, error, apiImage) in
-                if isSuccess == true {
-                    if let image = apiImage {
-                        self.images[fruit.title!] = image
-                    } else {
-                        print("Image from \(fruit.title) is missing")
-                    }
-                } else {
-                    print("Couldnt get images")
-                }
-            }
-        }
-    }
+//    func getAllImages(){
+//
+//        for fruit in fruits {
+//            APIManager.shared.getPictureOfFruit(url: fruit.url!) { (isSuccess, error, apiImage) in
+//                if isSuccess == true {
+//                    if let image = apiImage {
+//                        self.images[fruit.title!] = image
+//                    } else {
+//                        print("Image from \(fruit.title) is missing")
+//                    }
+//                } else {
+//                    print("Couldnt get images")
+//                }
+//            }
+//        }
+//    }
     
     func getSections(fruits: [Fruits]) -> [String] {
         
@@ -140,5 +215,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return section
     }
     
+    
+    func sortData() {
+        
+        data[.local] = Array(CoreDataManager.getFruitsType(type: "local")!)
+        data[.exotic] = Array(CoreDataManager.getFruitsType(type: "exotic")!)
+        listTableView.reloadData()
+    }
     
 }

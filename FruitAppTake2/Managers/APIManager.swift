@@ -61,7 +61,6 @@ class APIManager {
                     fruits.append(fruit)
                 }
             }
-            print(fruits)
             completionHandler(isSuccess, nil, fruits)
         }
         task.resume()
